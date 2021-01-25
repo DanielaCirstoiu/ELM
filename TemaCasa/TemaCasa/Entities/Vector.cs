@@ -15,13 +15,13 @@ namespace TemaCasa.Entities
         public Vector(int lin)
         {
             this.lin = lin;
-            _matrix = new double[lin + 1];
+            _matrix = new double[lin];
         }
 
         public Vector Clone()
         {
             Vector clone = new Vector(lin);
-            for (int i = 1; i <= lin; i++)
+            for (int i = 0; i < lin; i++)
             {
                 clone._matrix[i] = this._matrix[i];
             }

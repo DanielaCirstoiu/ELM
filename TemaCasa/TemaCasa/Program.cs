@@ -11,10 +11,10 @@ namespace TemaCasa
         static void Main(string[] args)
         {
             Sub1 sub1 = new Sub1();
-            sub1.methodKrylov();
-            sub1.methodDanilevski();
-            sub1.methodDirect();
-            sub1.methodLeverriere();
+            sub1.methodKrylovExecute();
+            //sub1.methodDanilevski();
+            //sub1.methodDirect();
+            //sub1.methodLeverriere();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace TemaCasa
     {
         static string defaultReadFilePath = "in.txt";
         static string defaultWriteFilePath = "I_A_RED.txt";
+        
 
         public static List<Matrix> readFileforMatrix(string filePath)
         {
@@ -30,6 +31,7 @@ namespace TemaCasa
                 if (dimension * dimension == (elements.Length - 2))
                 {
                     Matrix M = new Matrix(dimension, dimension);
+                    M.Name = elements[0];
                     int k = 2;
                     for (int i = 2; i < elements.Length; i+=dimension)
                     {

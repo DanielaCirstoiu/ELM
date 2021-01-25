@@ -23,3 +23,5 @@ C:\Users\CE01812465\OneDrive - DRAEXLMAIER\Daniela\MEL\TemaCasa\TemaCasa\bin\Deb
 C:\Users\CE01812465\OneDrive - DRAEXLMAIER\Daniela\MEL\TemaCasa\TemaCasa\obj\Debug\TemaCasa.csproj.CopyComplete
 C:\Users\CE01812465\OneDrive - DRAEXLMAIER\Daniela\MEL\TemaCasa\TemaCasa\obj\Debug\TemaCasa.exe
 C:\Users\CE01812465\OneDrive - DRAEXLMAIER\Daniela\MEL\TemaCasa\TemaCasa\obj\Debug\TemaCasa.pdb
+C:\Users\CE01812465\OneDrive - DRAEXLMAIER\Daniela\MEL\TemaCasa\TemaCasa\bin\Debug\Extreme.Numerics.dll
+C:\Users\CE01812465\OneDrive - DRAEXLMAIER\Daniela\MEL\TemaCasa\TemaCasa\bin\Debug\Extreme.Numerics.xml

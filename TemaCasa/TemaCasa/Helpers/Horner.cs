@@ -10,7 +10,7 @@ namespace TemaCasa.Helpers
     public class Horner
     {
 
-        private Vector res;
+        private Vector res ;
 
 
         public Vector getRes()
@@ -20,14 +20,14 @@ namespace TemaCasa.Helpers
         public void calculate(double x, Vector p)
         {
             double result = 0;
-            Vector res = new Vector(p.lin);
+            res = new Vector(p.lin);
             for (int i = p.lin- 1; i >= 0; i--)
             {
                 result = p._matrix[i] + (x * result);
                 res._matrix[p.lin - i - 1] = result;
             }
         }
-
+        //evalueaza o valoare trecuta prin schema
         public double eval(double x, Vector p)
         {
             double result = 0;

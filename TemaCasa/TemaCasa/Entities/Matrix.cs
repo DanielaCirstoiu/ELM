@@ -10,7 +10,7 @@ namespace TemaCasa.Entities
     public class Matrix
     {
         #region private Properties
-
+        private string _name;
         internal double[,] _matrix;
         private int _col;
         private int _lin;
@@ -73,15 +73,19 @@ namespace TemaCasa.Entities
             get { return _col; }
         }
 
+        public string Name { get => _name; set => _name = value; }
+        #endregion
         // print matrix to standard output
-        public void Show()
+        public string Show()
         {
+            string result = "";
             for (int i = 0; i < lin; i++)
             {
                 for (int j = 0; j < col; j++)
-                    Console.WriteLine("%9.4f ", _matrix[i, j]);
-                Console.WriteLine();
+                    result += _matrix[i, j] + " ";
+                result += "\n";
             }
+            return result;
         }
 
         public string Print()
@@ -119,91 +123,92 @@ namespace TemaCasa.Entities
             return clone;
         }
 
-    //    public Matrix methodKrylov()
-    //    {
-    //        Matrix pc = det_pol_car(this);
-    //        if (this.lin % 2 == 1)
-    //            for (int i = 0; i <= pc.lin; i++)
-    //                pc._matrix[i, 1] = -pc._matrix[i, 1];
-    //        return pc;
-    //    }
+        //    public Matrix methodKrylov()
+        //    {
+        //        Matrix pc = det_pol_car(this);
+        //        if (this.lin % 2 == 1)
+        //            for (int i = 0; i <= pc.lin; i++)
+        //                pc._matrix[i, 1] = -pc._matrix[i, 1];
+        //        return pc;
+        //    }
 
-    //    public Matrix methodDanilevski()
-    //    {
-    //        Matrix pc = det_pol_car(this);
-    //        if (this.lin % 2 == 1)
-    //            for (int i = 0; i <= pc.lin; i++)
-    //                pc._matrix[i, 1] = -pc._matrix[i, 1];
-    //        return pc;
-    //    }
+        //    public Matrix methodDanilevski()
+        //    {
+        //        Matrix pc = det_pol_car(this);
+        //        if (this.lin % 2 == 1)
+        //            for (int i = 0; i <= pc.lin; i++)
+        //                pc._matrix[i, 1] = -pc._matrix[i, 1];
+        //        return pc;
+        //    }
 
-    //    public Matrix methodLeverriere()
-    //    {
-    //        Matrix pc;
-    //        double[] an; double[] s;
-    //        pc = new Matrix(this.lin, 1);
-    //        //a.lin = a.col = pc.lin = n;
-    //        for (int i = 1; i <= this.lin; i++)
-    //            an[1] = a;
-    //        s[1] = TraceM(an[1]);
-    //        pc._matrix[0, 1] = 1;
-    //        pc._matrix[1, 1] = -TraceM(an[1]);
-    //        for (int i = 2; i <= a.lin; i++)
-    //        {
-    //            an[i] = PowerM(a, i);
-    //            s[i] = TraceM(an[i]);
-    //            double aux = 0;
-    //            for (j = 1; j < i; j++)
-    //                aux += pc._matrix[j, 1] * s[i - j];
-    //            aux += s[i];
-    //            pc._matrix[i, 1] = -1.0 / i * aux;
-    //        }
-    //        if (pc.lin % 2 == 1)
-    //            for (int i = 0; i <= pc.lin; i++)
-    //                pc._matrix[i, 1] = -pc._matrix[i, 1];
-    //        return pc;
-    //    }
+        //    public Matrix methodLeverriere()
+        //    {
+        //        Matrix pc;
+        //        double[] an; double[] s;
+        //        pc = new Matrix(this.lin, 1);
+        //        //a.lin = a.col = pc.lin = n;
+        //        for (int i = 1; i <= this.lin; i++)
+        //            an[1] = a;
+        //        s[1] = TraceM(an[1]);
+        //        pc._matrix[0, 1] = 1;
+        //        pc._matrix[1, 1] = -TraceM(an[1]);
+        //        for (int i = 2; i <= a.lin; i++)
+        //        {
+        //            an[i] = PowerM(a, i);
+        //            s[i] = TraceM(an[i]);
+        //            double aux = 0;
+        //            for (j = 1; j < i; j++)
+        //                aux += pc._matrix[j, 1] * s[i - j];
+        //            aux += s[i];
+        //            pc._matrix[i, 1] = -1.0 / i * aux;
+        //        }
+        //        if (pc.lin % 2 == 1)
+        //            for (int i = 0; i <= pc.lin; i++)
+        //                pc._matrix[i, 1] = -pc._matrix[i, 1];
+        //        return pc;
+        //    }
 
-    //    public Matrix methodDirect()
-    //    {
-    //        Matrix a, x, y, y1;
-    //        Matrix lambda;
-    //        double max;
-    //        a = new Matrix(this.lin, this.lin);
-    //        y = new Matrix(this.lin, 1);
-    //        x = new Matrix(1, this.lin);
-    //        for (int i = 1; i <= this.lin; i++)
-    //        {
-    //            y._matrix[i, 1] = 1;
-    //        }
-    //        y1[1] = y;
-    //        for (int i = 2; i <= max; i++)
-    //        {
-    //            y1[i] = this.MultiplyM(a, y1[i - 1]);
-    //            y1[i].print(writer);
-    //        }
-    //        double lambdaRounded = 0;
-    //        for (int i = 1; i <= this.lin; i++)
-    //        {
-    //            lambda[i] = y1[max]._matrix[i, 1] / y1[max - 1]._matrix[i, 1];
-    //            lambdaRounded += lambda[i];
-    //        }
-    //        writer.write("Lambda " + lambdaRounded / n + '\n');
-    //        lambdaRounded = Math.round(lambdaRounded / n);
-    //        writer.write("Lambda rotunjit " + lambdaRounded + '\n');
+        //    public Matrix methodDirect()
+        //    {
+        //        Matrix a, x, y, y1;
+        //        Matrix lambda;
+        //        double max;
+        //        a = new Matrix(this.lin, this.lin);
+        //        y = new Matrix(this.lin, 1);
+        //        x = new Matrix(1, this.lin);
+        //        for (int i = 1; i <= this.lin; i++)
+        //        {
+        //            y._matrix[i, 1] = 1;
+        //        }
+        //        y1[1] = y;
+        //        for (int i = 2; i <= max; i++)
+        //        {
+        //            y1[i] = this.MultiplyM(a, y1[i - 1]);
+        //            y1[i].print(writer);
+        //        }
+        //        double lambdaRounded = 0;
+        //        for (int i = 1; i <= this.lin; i++)
+        //        {
+        //            lambda[i] = y1[max]._matrix[i, 1] / y1[max - 1]._matrix[i, 1];
+        //            lambdaRounded += lambda[i];
+        //        }
+        //        writer.write("Lambda " + lambdaRounded / n + '\n');
+        //        lambdaRounded = Math.round(lambdaRounded / n);
+        //        writer.write("Lambda rotunjit " + lambdaRounded + '\n');
 
-    //        double norma = 0;
-    //        for (int i = 1; i <= n; i++)
-    //        {
-    //            norma += y1[max]._matrix[i][1] * y1[max]._matrix[i][1];
-    //        }
-    //        norma = Math.Sqrt(norma);
-    //        for (int i = 1; i <= this.lin; i++)
-    //        {
-    //            x._matrix[1, i] = y1[max]._matrix[i][1] / norma;
+        //        double norma = 0;
+        //        for (int i = 1; i <= n; i++)
+        //        {
+        //            norma += y1[max]._matrix[i][1] * y1[max]._matrix[i][1];
+        //        }
+        //        norma = Math.Sqrt(norma);
+        //        for (int i = 1; i <= this.lin; i++)
+        //        {
+        //            x._matrix[1, i] = y1[max]._matrix[i][1] / norma;
 
-    //        }
-    //        return x;
-    //    }
-    //}
+        //        }
+        //        return x;
+        //    }
+        //}
+    }
 }
