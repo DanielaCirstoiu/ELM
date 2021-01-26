@@ -7,19 +7,22 @@ using System.Threading.Tasks;
 using TemaCasa.Entities;
 using TemaCasa.Helpers;
 
-namespace TemaCasa.Subjects.Sub2
+namespace TemaCasa.Subjects.Sub3
 {
-    class methodGaussJordan
+    public class methodCramer
     {
         MatrixF funct = new MatrixF();
-        internal void mainGaussJordan(Matrix a, string filePath)
+        Cramer cramer = new Cramer();
+        public void mainCramer(Matrix a, Matrix b, string filePath)
         {
             StreamWriter writer;
             writer = new StreamWriter(filePath);
             StringBuilder result = new StringBuilder();
-            result.Append(funct.Inverse(a).Print());
+
+
             writer.Write(result);
             writer.Close();
+
         }
     }
 }

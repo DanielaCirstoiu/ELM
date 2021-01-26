@@ -62,7 +62,7 @@ namespace TemaCasa
             result.Append("Solve equation! The roots are: ");
             for (int i = 0; i < n; i++)
             {
-                result.Append(q[i] + " ");
+                result.Append("q"+i+"= "+ q[i] + " ");
             }
             String polynom = "lambda ^ " + n;
             for (int i = n - 1; i > 0; i--)
@@ -188,7 +188,7 @@ namespace TemaCasa
                 //x = y[n - 2];
                 //x = addMatrices(x, multiplyMatrixWithScalar(y0, L._matrix[L.lin - 1]), n, 1);
                 result.Append('\n');
-                result.Append("X" + (i) + ": \n" + x);
+                result.Append("X" + (i) + ": \n" + x.ToString());
                 
             }
         }

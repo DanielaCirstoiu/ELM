@@ -7,8 +7,8 @@ using TemaCasa.Entities;
 
 namespace TemaCasa
 {
-    //Subiectul I
-    class Sub1
+    ///Subiectul I
+    public class Sub1
     {     
         public void methodKrylovExecute()
         {
@@ -75,10 +75,5 @@ namespace TemaCasa
 
         //}
 
-
-        //det polinoamele caracteristice
-        //det valorilor proprii
-        //det vectorilor proprii
-        //scrierea rezultatelor intr-un fisier text
     }
 }

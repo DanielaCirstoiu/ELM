@@ -92,7 +92,11 @@
     <Compile Include="Subjects\Sub1\Sub1.cs" />
     <Compile Include="Entities\Vector.cs" />
     <Compile Include="Subjects\Sub2\methodDirectInverse.cs" />
+    <Compile Include="Subjects\Sub2\methodGaussJordan.cs" />
     <Compile Include="Subjects\Sub2\Sub2.cs" />
+    <Compile Include="Subjects\Sub3\methodCramer.cs" />
+    <Compile Include="Subjects\Sub3\methodGaussJordan_.cs" />
+    <Compile Include="Subjects\Sub3\Sub3.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

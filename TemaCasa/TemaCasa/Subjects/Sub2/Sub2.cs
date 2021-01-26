@@ -11,7 +11,7 @@ namespace TemaCasa.Subjects.Sub2
     {
         public void methodDirectInverseExecute()
         {
-            string filepath = "sub1in.txt";
+            string filepath = "sub2in.txt";
             string fileout = @"Sub2\";
             //citeste matricea
             List<Matrix> matrices = FileHandler.readFileforMatrix(filepath);
@@ -22,6 +22,23 @@ namespace TemaCasa.Subjects.Sub2
             foreach (var a in matrices)
             {
                 mdi.mainDirectInverse(a, fileout + "II_A_RED_" + a.Name + ".txt");
+            }
+
+        }
+
+        public void methodGaussJordanExecute()
+        {
+            string filepath = "sub2in.txt";
+            string fileout = @"Sub2\";
+            //citeste matricea
+            List<Matrix> matrices = FileHandler.readFileforMatrix(filepath);
+
+            methodGaussJordan mgj = new methodGaussJordan();
+
+            //Metoda Krylov:
+            foreach (var a in matrices)
+            {
+                mgj.mainGaussJordan(a, fileout + "II_B_RED_" + a.Name + ".txt");
             }
 
         }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TemaCasa.Subjects.Sub2;
+using TemaCasa.Subjects.Sub3;
 
 namespace TemaCasa
 {
@@ -19,6 +20,8 @@ namespace TemaCasa
 
             Sub2 sub2 = new Sub2();
             //sub2.methodDirectInverseExecute();
+
+            Sub3 sub3 = new Sub3();
         }
     }
 }
