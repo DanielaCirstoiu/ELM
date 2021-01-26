@@ -82,10 +82,10 @@ namespace TemaCasa.Helpers
             }
         }
 
-        public Matrix copyMatrix(Matrix m, int lin, int col)
+        public Matrix copyMatrix(Matrix m, int size, int col)
         {
-            int sizeM = size - 1;
-            Matrix result = new Matrix(lin,col);
+            int sizeM =size-1;
+            Matrix result = new Matrix(sizeM,sizeM);
             int nI = 0;
             for (int i = 1; i < size; i++)
             {

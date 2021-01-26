@@ -12,8 +12,8 @@ namespace TemaCasa
     {     
         public void methodKrylovExecute()
         {
-            string filepath = @"C:\Users\CE01812465\OneDrive - DRAEXLMAIER\Daniela\Git\MEL\TemaCasa\TemaCasa\bin\Debug\sub1in.txt";
-            string fileout = @"C:\Users\CE01812465\OneDrive - DRAEXLMAIER\Daniela\Git\MEL\TemaCasa\TemaCasa\bin\Debug\";
+            string filepath = "sub1in.txt";
+            string fileout = "";
             //citeste matricea
             List<Matrix> matrices = FileHandler.readFileforMatrix(filepath);
 
@@ -22,7 +22,7 @@ namespace TemaCasa
             //Metoda Krylov:
             foreach (var a in matrices)
             {
-                mk.mainKrylov(a, fileout+"I_A_RED."+ a.Name +".txt" );
+                mk.mainKrylov(a, fileout+"I_A_RED_"+ a.Name +".txt" );
             }
 
         }

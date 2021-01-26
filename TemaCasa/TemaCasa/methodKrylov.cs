@@ -36,11 +36,9 @@ namespace TemaCasa
         }
 
 
-        public double[] solveSystem(string filePath)
+        public double[] solveSystem(string filePath, ref StringBuilder result)
         {
             Matrix q1;
-            StreamWriter writer;
-            writer = new StreamWriter(filePath);
             q1 = new Matrix(n, n);
             for (int i = 0; i < n; i++)
             {
@@ -50,9 +48,9 @@ namespace TemaCasa
                 }
                 q1._matrix[i,n - 1] = y0._matrix[i, 0];
             }
-            writer.Write("Matrix Q = [y(n-1) y(n-2) ... y(0)] : \n");
-            writer.Write(q1.Print()); ;
-            writer.Write('\n');
+            result.Append("Matrix Q = [y(n-1) y(n-2) ... y(0)] : \n");
+            result.Append(q1.Print()); ;
+            result.Append('\n');
 
             double[] b = new double[n];
             for (int i = 0; i < n; i++)
@@ -61,10 +59,10 @@ namespace TemaCasa
             }
             Cramer cramer = new Cramer(q1, b);
             q = cramer.solve();
-            writer.Write("Solve ecuation! The roots q1, q2,.., qn are... ");
+            result.Append("Solve ecuation! The roots q1, q2,.., qn are... ");
             for (int i = 0; i < n; i++)
             {
-                writer.Write(q[i] + " ");
+                result.Append(q[i] + " ");
             }
             String polynom = "lambda ^ " + n;
             for (int i = n - 1; i > 0; i--)
@@ -72,9 +70,8 @@ namespace TemaCasa
                 polynom += (" + " + q[n - i - 1] + " * lambda ^ " + i);
             }
             polynom += " + " + q[n - 1];
-            writer.Write('\n');
-            writer.Write("The polynomial is " + polynom + '\n');
-            writer.Close();
+            result.Append('\n');
+            result.Append("The polynomial is " + polynom + '\n');
             return q;
         }
 
@@ -154,10 +151,8 @@ namespace TemaCasa
             return lambda._matrix;
         }
 
-        private static void EigenVectors(double[] paux,string filePath)
+        private static void EigenVectors(double[] paux,string filePath, ref StringBuilder result)
         {
-            StreamWriter writer;
-            writer = new StreamWriter(filePath);
             Vector lambda;
             Vector p = new Vector(paux.Length);
             for (int i = 0; i < paux.Length; i++)
@@ -179,23 +174,22 @@ namespace TemaCasa
                     //lambda^2 -34 lambda + 33
                     k++;
                 }
-                writer.Write("L" + (i) + " : " + poly);
+                result.Append("L" + (i) + " : " + poly);
                 Matrix x = y[n - 2];
                 for (int j = 1; j < n - 1; j++)
                 {
+                    x = y[n - 2];
                     //y1 + y0*L0
                     //y1 + y0*L1
-                    x = addMatrices(x, multiplyMatrixWithScalar(y[n - j - 2], L._matrix[j]), n, 1);
+                    x = addMatrices(x, multiplyMatrixWithScalar(y[n - j - 1], L._matrix[j]), n, 1);
                 }
                 x = addMatrices(x, multiplyMatrixWithScalar(y0, L._matrix[L.lin - 2]), n, 1);
-                x = y[n - 2];
-                x = addMatrices(x, multiplyMatrixWithScalar(y0, L._matrix[L.lin - 1]), n, 1);
-                writer.Write('\n');
-                writer.Write("X" + (i) + ": \n");
-                writer.Write(x.Print());
+                //x = y[n - 2];
+                //x = addMatrices(x, multiplyMatrixWithScalar(y0, L._matrix[L.lin - 1]), n, 1);
+                result.Append('\n');
+                result.Append("X" + (i) + ": \n" + x);
                 
             }
-            writer.Close();
         }
 
         private static Matrix addMatrices(Matrix a, Matrix b, int lin, int col)
@@ -221,7 +215,7 @@ namespace TemaCasa
             StreamWriter writer;
             writer = new StreamWriter(filePath);
             StringBuilder result = new StringBuilder();
-            writer.Write("Matrix " + a.Name + '\n');
+            result.Append("Matrix " + a.Name + '\n');
             n = a.lin;
                 A = new Matrix(n, n);
                 for (int i = 0; i < n; i++)
@@ -232,25 +226,23 @@ namespace TemaCasa
                 for (int i = 1; i < n; i++)
                     y0._matrix[i,0] = 0;
 
-                writer.Write("Matrix A: \n");
-                writer.Write(A.Print());
-                writer.Write('\n');
-                writer.Write("Matrix y0:\n");
-                writer.Write(y0.Print());
-                writer.Write('\n');
+                result.Append("Matrix A: \n");
+                result.Append(A.Print());
+                result.Append('\n');
+                result.Append("Matrix y0:\n");
+                result.Append(y0.Print());
+                result.Append('\n');
                 buildY();
                 for (int i = 0; i < n; i++)
                 {
-                    writer.Write("Matrix y" + (i + 1) + '\n');
-                    writer.Write(y[i].Print());
-                    writer.Write('\n');
-                }
-                writer.Close();
-            
+                    result.Append("Matrix y" + (i + 1) + '\n');
+                    result.Append(y[i].Print());
+                    result.Append('\n');
+                }            
                 //solveSystem(filePath);
                 //Eigenvalues(solveSystem(filePath),filePath);
-                EigenVectors(Eigenvalues(solveSystem(filePath), filePath,ref result),filePath);
-                writer.Write(result);
+                EigenVectors(Eigenvalues(solveSystem(filePath, ref result), filePath,ref result),filePath,ref result);
+                result.Append(result);
                 writer.Close();
             }
         
