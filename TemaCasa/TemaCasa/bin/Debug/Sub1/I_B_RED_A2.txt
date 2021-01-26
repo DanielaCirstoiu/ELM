@@ -1,0 +1,2 @@
+Matrix : TemaCasa.Entities.Matrixcoef 0 -34
+coef 1 -0.0411985018726047

@@ -151,7 +151,7 @@ namespace TemaCasa.Helpers
             return ret;
         }
 
-        /// Swap rows l1 and l2
+        /// Swap lin l1 and l2
         public Matrix SwapLin(Matrix a, int l1, int l2)
         {
             Matrix b = a.Clone();
@@ -163,7 +163,7 @@ namespace TemaCasa.Helpers
             return b;
         }
 
-        ///Swap columns
+        ///Swap col
         Matrix SwapCol(Matrix a, Matrix b, int k)
         {
             Matrix ret;
@@ -249,10 +249,36 @@ namespace TemaCasa.Helpers
             Matrix ret = new Matrix(a.col, a.lin);
             for (int i = 0; i < ret.lin; i++)
                 for (int j = 0; j < ret.col; j++)
-                    ret._matrix[j, i] = ret._matrix[i, j];
+                    ret._matrix[j, i] = a._matrix[i, j];
             return ret;
         }
-        
+
+        public Matrix Adjoint(Matrix m)
+        {
+            Matrix ma = new Matrix(m.lin,m.col);
+            ma = m.Clone();
+            for (int r = 0; r < m.lin; r++)
+            {
+                for (int c = 0; c < m.col; c++)
+                {
+                    ma._matrix[r,c] = Helper.Pow(-1, r + c) * Det(Helper.RemoveRowAndColumn(m, r, c));
+                }
+            }
+            return ma;
+        }
+
+        public Matrix DirectInverse(Matrix m )
+        {
+            //if (!Helper.IsZero(Det(m)))
+            {
+                Matrix transpose = Transpose(m);
+                Matrix adjoint = this.Adjoint(transpose);
+
+                return MultiplyScalar( adjoint, 1/Det(m));
+            }
+            //return new Matrix(1, 1);
+        }
+
 
         ///Sum of the principal diagonal
         public double TraceM(Matrix a)
@@ -413,53 +439,24 @@ namespace TemaCasa.Helpers
         }
         public double Det(Matrix a)
         {
-            int poz, i, j, k, semn;
-            double aux, pivot, max, ret;
-            semn = 0;
-            ret = 0;
-            Matrix b = new Matrix(a.lin, a.col);
-            for (i = 1; i <= b.lin; i++)
-                for (j = 1; j <= b.col; j++)
-                    b._matrix[i,j] = a._matrix[i,j];
-            for (i = 1; i <= b.lin; i++)
+            if (a.lin > 2)
             {
-                max = Math.Abs(b._matrix[i,i]);
-                poz = i;
-                for (j = i + 1; j <= b.lin; j++)
-                    if (Math.Abs(b._matrix[j,i]) > max)
-                    {
-                        max = Math.Abs(b._matrix[j,i]);
-                        poz = j;
-                    }
-                if (max == 0)
-                    return ret;
-                else
+                double value = 0;
+                for (int j = 0; j < a.lin; j++)
                 {
-                    if (poz != i)
-                    {
-                        for (j = 1; j <= b.col; j++)
-                        {
-                            aux = b._matrix[i,j];
-                            b._matrix[i,j] = b._matrix[poz,j];
-                            b._matrix[poz,j] = aux;
-                        }
-                        semn++;
-                    }
+                    Matrix Temp = Helper.RemoveRowAndColumn(a, 0, j);
+                    value = value + a._matrix[0,j] * (Helper.ElementSign(0, j) * Det(Temp));
                 }
-                for (j = i + 1; j <= b.lin; j++)
-                {
-                    pivot = b._matrix[j,i];
-                    for (k = i; k <= b.col; k++)
-                        b._matrix[j,k] = b._matrix[j,k] - pivot / b._matrix[i,i] * b._matrix[i,k];
-                }
-
+                return value;
             }
-            ret = 1;
-            for (i = 1; i <= b.lin; i++)
-                ret *= b._matrix[i,i];
-            if (semn % 2 == 1)
-                ret = -ret;
-            return ret;
+            else if (a.lin == 2)
+            {
+                return ((a._matrix[0,0] * a._matrix[1,1]) - (a._matrix[1,0] * a._matrix[0,1]));
+            }
+            else
+            {
+                return a._matrix[0,0];
+            }
         }
 
         public int Rank(Matrix a)
@@ -526,22 +523,23 @@ namespace TemaCasa.Helpers
             return ret;
         }
 
+        //ok
         public Matrix Inverse(Matrix a)
         {
             Matrix aextins = new Matrix(a.lin, 2 * a.col), ret = new Matrix(a.lin, a.col);
             double max, pivot, aux;
             int i, j, k, poz;
-            for (i = 1; i <= a.lin; i++)
-                for (j = 1; j <= a.col; j++)
+            for (i = 0; i < a.lin; i++)
+                for (j = 0; j < a.col; j++)
                     aextins._matrix[i,j] = a._matrix[i,j];
-            for (i = 1; i <= aextins.lin; i++)
-                for (j = a.col + 1; j <= aextins.col; j++)
+            for (i = 0; i < aextins.lin; i++)
+                for (j = a.col; j < aextins.col; j++)
                     aextins._matrix[i,j] = (j - i == a.col ? 1 : 0);
-            for (i = 1; i <= aextins.lin; i++)
+            for (i = 0; i < aextins.lin; i++)
             {
                 max = Math.Abs(aextins._matrix[i,i]);
                 poz = i;
-                for (j = i + 1; j <= aextins.lin; j++)
+                for (j = i; j < aextins.lin; j++)
                     if (Math.Abs(aextins._matrix[j,i]) > max)
                     {
                         max = Math.Abs(aextins._matrix[j,i]);
@@ -554,25 +552,25 @@ namespace TemaCasa.Helpers
                     System.Environment.Exit(1);
                 }
                 if (poz != i)
-                    for (k = i; k <= aextins.col; k++)
+                    for (k = i-1; k < aextins.col; k++)
                     {
                         aux = aextins._matrix[poz,k];
                         aextins._matrix[poz,k] = aextins._matrix[i,k];
                         aextins._matrix[i,k] = aux;
                     }
                 pivot = aextins._matrix[i,i];
-                for (j = i; j <= aextins.col; j++)
+                for (j = i; j < aextins.col; j++)
                     aextins._matrix[i,j] = aextins._matrix[i,j] / pivot;
-                for (j = 1; j <= aextins.lin; j++)
+                for (j = 0; j < aextins.lin; j++)
                     if (j != i)
                     {
                         pivot = aextins._matrix[j,i];
-                        for (k = i; k <= aextins.col; k++)
+                        for (k = i; k < aextins.col; k++)
                             aextins._matrix[j,k] = aextins._matrix[j,k] - pivot * aextins._matrix[i,k];
                     }
             }
-            for (i = 1; i <= ret.lin; i++)
-                for (j = 1; j <= ret.col; j++)
+            for (i = 0; i < ret.lin; i++)
+                for (j = 0; j < ret.col; j++)
                     ret._matrix[i,j] = aextins._matrix[i,j + a.col];
             return ret;
         }

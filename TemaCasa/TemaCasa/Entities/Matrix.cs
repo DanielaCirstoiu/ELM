@@ -113,9 +113,9 @@ namespace TemaCasa.Entities
         public Matrix Clone()
         {
             Matrix clone = new Matrix(lin, col);
-            for (int i = 1; i <= lin; i++)
+            for (int i = 0; i < lin; i++)
             {
-                for (int j = 1; j <= col; j++)
+                for (int j = 0; j < col; j++)
                 {
                     clone._matrix[i, j] = this._matrix[i, j];
                 }
