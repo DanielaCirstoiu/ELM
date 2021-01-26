@@ -1,0 +1,39 @@
+Matrix A3
+
+-29 66 -35 
+-10 6 0 
+46 -76 35 
+Vector y0:
+
+1 
+0 
+0 
+Vector y1
+
+-29 
+-10 
+46 
+Vector y2
+
+-1429 
+230 
+1036 
+Vector y3
+
+20361 
+15670 
+-46954 
+Matrix Q : 
+
+-1429 -29 1 
+230 -10 0 
+1036 46 0 
+Solve equation! The roots are: -12 1291 -70 
+The polynomial is lambda ^ 3 + -12 * lambda ^ 2 + 1291 * lambda ^ 1 + -70
+Eigenvalues: Lambda1 = 0 Lambda2 = 0 Lambda3 = 0 L0 : lambda ^ 2
+X0: 
+TemaCasa.Entities.MatrixL1 : lambda ^ 2
+X1: 
+TemaCasa.Entities.MatrixL2 : lambda ^ 2
+X2: 
+TemaCasa.Entities.Matrix

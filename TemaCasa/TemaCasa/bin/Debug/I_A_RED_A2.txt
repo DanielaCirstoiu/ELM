@@ -1,0 +1,53 @@
+Matrix A2
+
+801 1280 
+-480 -767 
+Vector y0:
+
+1 
+0 
+Vector y1
+
+801 
+-480 
+Vector y2
+
+27201 
+-16320 
+Matrix Q : 
+
+801 1 
+-480 0 
+Solve equation! The roots are: -34 33 
+The polynomial is lambda ^ 2 + -34 * lambda ^ 1 + 33
+Eigenvalues: Lambda1 = 1 Lambda2 = 33 L0 : lambda ^ 1 + 33 * lambda ^ 0
+X0: 
+TemaCasa.Entities.MatrixL1 : lambda ^ 1 + 33 * lambda ^ 0
+X1: 
+TemaCasa.Entities.MatrixMatrix A2
+
+801 1280 
+-480 -767 
+Vector y0:
+
+1 
+0 
+Vector y1
+
+801 
+-480 
+Vector y2
+
+27201 
+-16320 
+Matrix Q : 
+
+801 1 
+-480 0 
+Solve equation! The roots are: -34 33 
+The polynomial is lambda ^ 2 + -34 * lambda ^ 1 + 33
+Eigenvalues: Lambda1 = 1 Lambda2 = 33 L0 : lambda ^ 1 + 33 * lambda ^ 0
+X0: 
+TemaCasa.Entities.MatrixL1 : lambda ^ 1 + 33 * lambda ^ 0
+X1: 
+TemaCasa.Entities.Matrix

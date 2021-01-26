@@ -48,7 +48,7 @@ namespace TemaCasa
                 }
                 q1._matrix[i,n - 1] = y0._matrix[i, 0];
             }
-            result.Append("Matrix Q = [y(n-1) y(n-2) ... y(0)] : \n");
+            result.Append("Matrix Q : \n");
             result.Append(q1.Print()); ;
             result.Append('\n');
 
@@ -59,7 +59,7 @@ namespace TemaCasa
             }
             Cramer cramer = new Cramer(q1, b);
             q = cramer.solve();
-            result.Append("Solve ecuation! The roots q1, q2,.., qn are... ");
+            result.Append("Solve equation! The roots are: ");
             for (int i = 0; i < n; i++)
             {
                 result.Append(q[i] + " ");
@@ -147,6 +147,7 @@ namespace TemaCasa
             for (int i = 0; i < n; i++)
             {
                 result.Append("Lambda" + (i + 1) + " = " + lambda._matrix[i] + " ");
+                //lambda^2 - 34 lambda^1 +33 lambda^0 
             }
             return lambda._matrix;
         }
@@ -166,12 +167,12 @@ namespace TemaCasa
                 Vector L = new Vector(p.lin);
                 L = horner.getRes();
 
-                String poly = "lambda ^ " + n;
+                String poly = "lambda ^ " + (n-1);
                 int k = 0;
                 while (L._matrix[k] != 0.0 && k != L.lin - 1)
                 {
-                    poly += " + " + L._matrix[k] + " * lambda ^ " + (n - k - 1);
-                    //lambda^2 -34 lambda + 33
+                    poly += " + " + L._matrix[k] + " * lambda ^ " + (n - k - 2);
+                    //lambda^1 + 33 lambda^0
                     k++;
                 }
                 result.Append("L" + (i) + " : " + poly);
@@ -226,23 +227,23 @@ namespace TemaCasa
                 for (int i = 1; i < n; i++)
                     y0._matrix[i,0] = 0;
 
-                result.Append("Matrix A: \n");
                 result.Append(A.Print());
                 result.Append('\n');
-                result.Append("Matrix y0:\n");
+                result.Append("Vector y0:\n");
                 result.Append(y0.Print());
                 result.Append('\n');
                 buildY();
                 for (int i = 0; i < n; i++)
                 {
-                    result.Append("Matrix y" + (i + 1) + '\n');
+                    result.Append("Vector y" + (i + 1) + '\n');
                     result.Append(y[i].Print());
                     result.Append('\n');
                 }            
                 //solveSystem(filePath);
                 //Eigenvalues(solveSystem(filePath),filePath);
                 EigenVectors(Eigenvalues(solveSystem(filePath, ref result), filePath,ref result),filePath,ref result);
-                result.Append(result);
+                //result.Append(result);
+                writer.Write(result);
                 writer.Close();
             }
         

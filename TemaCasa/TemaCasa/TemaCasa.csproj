@@ -83,6 +83,8 @@
     <Compile Include="Helpers\Cramer.cs" />
     <Compile Include="Helpers\Horner.cs" />
     <Compile Include="Helpers\MatrixF.cs" />
+    <Compile Include="methodDanilevski.cs" />
+    <Compile Include="methodDirectPower.cs" />
     <Compile Include="methodKrylov.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

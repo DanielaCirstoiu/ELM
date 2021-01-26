@@ -12,8 +12,8 @@ namespace TemaCasa
         {
             Sub1 sub1 = new Sub1();
             sub1.methodKrylovExecute();
-            //sub1.methodDanilevski();
-            //sub1.methodDirect();
+            sub1.methodDanilevskiExecute();
+            sub1.methodDirectPowerExecute();
             //sub1.methodLeverriere();
         }
     }

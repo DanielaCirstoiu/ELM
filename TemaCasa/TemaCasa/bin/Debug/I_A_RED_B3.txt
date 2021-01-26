@@ -1,0 +1,77 @@
+Matrix B3
+
+-153 -212 -188 
+-3 -4 -3 
+160 222 195 
+Vector y0:
+
+1 
+0 
+0 
+Vector y1
+
+-153 
+-3 
+160 
+Vector y2
+
+-6035 
+-9 
+6054 
+Vector y3
+
+-212889 
+-21 
+212932 
+Matrix Q : 
+
+-6035 -153 1 
+-9 -3 0 
+6054 160 0 
+Solve equation! The roots are: -38 107 -70 
+The polynomial is lambda ^ 3 + -38 * lambda ^ 2 + 107 * lambda ^ 1 + -70
+Eigenvalues: Lambda1 = 1 Lambda2 = 2 Lambda3 = 35 L0 : lambda ^ 2 + 35 * lambda ^ 1 + 2 * lambda ^ 0
+X0: 
+TemaCasa.Entities.MatrixL1 : lambda ^ 2 + 35 * lambda ^ 1 + 2 * lambda ^ 0
+X1: 
+TemaCasa.Entities.MatrixL2 : lambda ^ 2 + 35 * lambda ^ 1 + 2 * lambda ^ 0
+X2: 
+TemaCasa.Entities.MatrixMatrix B3
+
+-153 -212 -188 
+-3 -4 -3 
+160 222 195 
+Vector y0:
+
+1 
+0 
+0 
+Vector y1
+
+-153 
+-3 
+160 
+Vector y2
+
+-6035 
+-9 
+6054 
+Vector y3
+
+-212889 
+-21 
+212932 
+Matrix Q : 
+
+-6035 -153 1 
+-9 -3 0 
+6054 160 0 
+Solve equation! The roots are: -38 107 -70 
+The polynomial is lambda ^ 3 + -38 * lambda ^ 2 + 107 * lambda ^ 1 + -70
+Eigenvalues: Lambda1 = 1 Lambda2 = 2 Lambda3 = 35 L0 : lambda ^ 2 + 35 * lambda ^ 1 + 2 * lambda ^ 0
+X0: 
+TemaCasa.Entities.MatrixL1 : lambda ^ 2 + 35 * lambda ^ 1 + 2 * lambda ^ 0
+X1: 
+TemaCasa.Entities.MatrixL2 : lambda ^ 2 + 35 * lambda ^ 1 + 2 * lambda ^ 0
+X2: 
+TemaCasa.Entities.Matrix

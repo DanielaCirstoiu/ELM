@@ -13,7 +13,7 @@ namespace TemaCasa
         public void methodKrylovExecute()
         {
             string filepath = "sub1in.txt";
-            string fileout = "";
+            string fileout = @"Sub1\";
             //citeste matricea
             List<Matrix> matrices = FileHandler.readFileforMatrix(filepath);
 
@@ -27,33 +27,39 @@ namespace TemaCasa
 
         }
 
-        //public void methodDanilevski()
-        //{
-        //    //citeste matricea
-        //    List<Matrix> matrices = FileHandler.readFileforMatrix("in.txt");
+        public void methodDanilevskiExecute()
+        {
+            string filepath = "sub1in.txt";
+            string fileout = @"Sub1\";
+            //citeste matricea
+            List<Matrix> matrices = FileHandler.readFileforMatrix(filepath);
 
+            methodDanilevski md = new methodDanilevski();
 
-        //    //Metoda Danilevski:
-        //    foreach (var b in matrices)
-        //    {
-        //        FileHandler.writeFile("I_B_RED.txt", b.methodDanilevski().Print());
-        //    }
+            //Metoda Danilevski:
+            foreach (var a in matrices)
+            {
+                md.mainDanilevski(a, fileout + "I_B_RED_" + a.Name + ".txt");
+            }
 
-        //}
+        }
 
-        //public void methodDirect()
-        //{
-        //    //citeste matricea
-        //    List<Matrix> matrices = FileHandler.readFileforMatrix("in.txt");
+        public void methodDirectPowerExecute()
+        {
+            string filepath = "sub1in.txt";
+            string fileout = @"Sub1\";
+            //citeste matricea
+            List<Matrix> matrices = FileHandler.readFileforMatrix(filepath);
 
+            methodDirectPower mdp = new methodDirectPower();
 
-        //    //Metoda Direct:
-        //    foreach (var b in matrices)
-        //    {
-        //        FileHandler.writeFile("I_C_RED.txt", b.methodDirect().Print());
-        //    }
+            //Metoda DirectPower:
+            foreach (var a in matrices)
+            {
+                mdp.mainDirectPower(a, fileout + "I_C_RED_" + a.Name + ".txt");
+            }
 
-        //}
+        }
 
         //public void methodLeverriere()
         //{

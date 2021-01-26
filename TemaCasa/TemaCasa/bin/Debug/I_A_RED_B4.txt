@@ -1,0 +1,105 @@
+Matrix B4
+
+2011 4554 -454 8863 
+-722 -1635 170 -3188 
+-87 -197 0 -367 
+-75 -170 31 -341 
+Vector y0:
+
+1 
+0 
+0 
+0 
+Vector y1
+
+2011 
+-722 
+-87 
+-75 
+Vector y2
+
+130906 
+-47162 
+-5198 
+-5207 
+Vector y3
+
+4686469 
+-1688006 
+-186939 
+-185961 
+Vector y4
+
+174007798 
+-62676770 
+-6937934 
+-6906563 
+Matrix Q : 
+
+4686469 130906 2011 1 
+-1688006 -47162 -722 0 
+-186939 -5198 -87 0 
+-185961 -5207 -75 0 
+Solve equation! The roots are: -35 -79 179 222 
+The polynomial is lambda ^ 4 + -35 * lambda ^ 3 + -79 * lambda ^ 2 + 179 * lambda ^ 1 + 222
+Eigenvalues: Lambda1 = -1 Lambda2 = 2 Lambda3 = -3 Lambda4 = 37 L0 : lambda ^ 3 + 37 * lambda ^ 2 + -3 * lambda ^ 1 + 2 * lambda ^ 0
+X0: 
+TemaCasa.Entities.MatrixL1 : lambda ^ 3 + 37 * lambda ^ 2 + -3 * lambda ^ 1 + 2 * lambda ^ 0
+X1: 
+TemaCasa.Entities.MatrixL2 : lambda ^ 3 + 37 * lambda ^ 2 + -3 * lambda ^ 1 + 2 * lambda ^ 0
+X2: 
+TemaCasa.Entities.MatrixL3 : lambda ^ 3 + 37 * lambda ^ 2 + -3 * lambda ^ 1 + 2 * lambda ^ 0
+X3: 
+TemaCasa.Entities.MatrixMatrix B4
+
+2011 4554 -454 8863 
+-722 -1635 170 -3188 
+-87 -197 0 -367 
+-75 -170 31 -341 
+Vector y0:
+
+1 
+0 
+0 
+0 
+Vector y1
+
+2011 
+-722 
+-87 
+-75 
+Vector y2
+
+130906 
+-47162 
+-5198 
+-5207 
+Vector y3
+
+4686469 
+-1688006 
+-186939 
+-185961 
+Vector y4
+
+174007798 
+-62676770 
+-6937934 
+-6906563 
+Matrix Q : 
+
+4686469 130906 2011 1 
+-1688006 -47162 -722 0 
+-186939 -5198 -87 0 
+-185961 -5207 -75 0 
+Solve equation! The roots are: -35 -79 179 222 
+The polynomial is lambda ^ 4 + -35 * lambda ^ 3 + -79 * lambda ^ 2 + 179 * lambda ^ 1 + 222
+Eigenvalues: Lambda1 = -1 Lambda2 = 2 Lambda3 = -3 Lambda4 = 37 L0 : lambda ^ 3 + 37 * lambda ^ 2 + -3 * lambda ^ 1 + 2 * lambda ^ 0
+X0: 
+TemaCasa.Entities.MatrixL1 : lambda ^ 3 + 37 * lambda ^ 2 + -3 * lambda ^ 1 + 2 * lambda ^ 0
+X1: 
+TemaCasa.Entities.MatrixL2 : lambda ^ 3 + 37 * lambda ^ 2 + -3 * lambda ^ 1 + 2 * lambda ^ 0
+X2: 
+TemaCasa.Entities.MatrixL3 : lambda ^ 3 + 37 * lambda ^ 2 + -3 * lambda ^ 1 + 2 * lambda ^ 0
+X3: 
+TemaCasa.Entities.Matrix

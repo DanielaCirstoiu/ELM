@@ -1,0 +1,105 @@
+Matrix A4
+
+-1282 -2828 -1442 -5521 
+464 1024 520 1996 
+46 101 56 198 
+57 126 63 244 
+Vector y0:
+
+1 
+0 
+0 
+0 
+Vector y1
+
+-1282 
+464 
+46 
+57 
+Vector y2
+
+-49697 
+17980 
+1754 
+2196 
+Vector y3
+
+-1789270 
+647408 
+62950 
+79077 
+Vector y4
+
+-64383701 
+23296204 
+2264234 
+2845656 
+Matrix Q : 
+
+-1789270 -49697 -1282 1 
+647408 17980 464 0 
+62950 1754 46 0 
+79077 2196 57 0 
+Solve equation! The roots are: -42 227 -402 216 
+The polynomial is lambda ^ 4 + -42 * lambda ^ 3 + 227 * lambda ^ 2 + -402 * lambda ^ 1 + 216
+Eigenvalues: Lambda1 = 1 Lambda2 = 2 Lambda3 = 3 Lambda4 = 36 L0 : lambda ^ 3 + 36 * lambda ^ 2 + 3 * lambda ^ 1 + 2 * lambda ^ 0
+X0: 
+TemaCasa.Entities.MatrixL1 : lambda ^ 3 + 36 * lambda ^ 2 + 3 * lambda ^ 1 + 2 * lambda ^ 0
+X1: 
+TemaCasa.Entities.MatrixL2 : lambda ^ 3 + 36 * lambda ^ 2 + 3 * lambda ^ 1 + 2 * lambda ^ 0
+X2: 
+TemaCasa.Entities.MatrixL3 : lambda ^ 3 + 36 * lambda ^ 2 + 3 * lambda ^ 1 + 2 * lambda ^ 0
+X3: 
+TemaCasa.Entities.MatrixMatrix A4
+
+-1282 -2828 -1442 -5521 
+464 1024 520 1996 
+46 101 56 198 
+57 126 63 244 
+Vector y0:
+
+1 
+0 
+0 
+0 
+Vector y1
+
+-1282 
+464 
+46 
+57 
+Vector y2
+
+-49697 
+17980 
+1754 
+2196 
+Vector y3
+
+-1789270 
+647408 
+62950 
+79077 
+Vector y4
+
+-64383701 
+23296204 
+2264234 
+2845656 
+Matrix Q : 
+
+-1789270 -49697 -1282 1 
+647408 17980 464 0 
+62950 1754 46 0 
+79077 2196 57 0 
+Solve equation! The roots are: -42 227 -402 216 
+The polynomial is lambda ^ 4 + -42 * lambda ^ 3 + 227 * lambda ^ 2 + -402 * lambda ^ 1 + 216
+Eigenvalues: Lambda1 = 1 Lambda2 = 2 Lambda3 = 3 Lambda4 = 36 L0 : lambda ^ 3 + 36 * lambda ^ 2 + 3 * lambda ^ 1 + 2 * lambda ^ 0
+X0: 
+TemaCasa.Entities.MatrixL1 : lambda ^ 3 + 36 * lambda ^ 2 + 3 * lambda ^ 1 + 2 * lambda ^ 0
+X1: 
+TemaCasa.Entities.MatrixL2 : lambda ^ 3 + 36 * lambda ^ 2 + 3 * lambda ^ 1 + 2 * lambda ^ 0
+X2: 
+TemaCasa.Entities.MatrixL3 : lambda ^ 3 + 36 * lambda ^ 2 + 3 * lambda ^ 1 + 2 * lambda ^ 0
+X3: 
+TemaCasa.Entities.Matrix
